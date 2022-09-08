@@ -1,35 +1,44 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
-import math
-
-def square_root(a: float) -> float:
-    return a**.5
+from math import pi
 
 
-def square(a: float) -> float:
-    return 0.0
+def square_root(a):
+    return a**0.5
 
 
-def average(a: float, b: float, c: float) -> float:
-    return 0.0
+def square(a):
+    return a*a
 
 
-def to_radians(angle_degs: float, angle_mins: float, angle_secs: float) -> float:
-    return 0.0
+def average(a, b, c) :
+    return a*b*c
 
 
-def to_degrees(angle_rads: float) -> tuple:
-    return 0.0, 0.0, 0.0
+def to_radians(angle_degs, angle_mins, angle_secs):
+
+   #transformer les deg en degrés décimal
+    degres_decimal = angle_degs + (angle_mins + angle_secs / 60) / 60
+
+   #transformer les degres en radiant
+    rad=(degres_decimal * pi)/180
+
+    return rad
 
 
-def to_celsius(temperature: float) -> float:
-    return 0.0
+def to_degrees(angle_rads):
+
+    angle_deg = angle_rad * 180 / pi
+
+    return angle_deg, 0.0, 0.0
 
 
-def to_farenheit(temperature: float) -> float:
-    return 0.0
+def to_celsius(temperature):
+    return (temperature - 32)/1.8
+
+def to_farenheit(temperature):
+    return (temperature * 1.8)+ 32
 
 
 def main() -> None:
