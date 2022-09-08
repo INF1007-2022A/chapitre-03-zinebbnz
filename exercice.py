@@ -29,9 +29,11 @@ def to_radians(angle_degs, angle_mins, angle_secs):
 
 def to_degrees(angle_rads):
 
-    angle_deg = angle_rad * 180 / pi
+    angle_deg = angle_rads * 180 / pi
+    min= (angle_deg-int(angle_deg))*60
+    sec= (min - int(min))*60
 
-    return angle_deg, 0.0, 0.0
+    return round(angle_deg),round(min) , round(sec)
 
 
 def to_celsius(temperature):
