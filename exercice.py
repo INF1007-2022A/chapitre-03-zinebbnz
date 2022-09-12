@@ -6,6 +6,7 @@ from math import pi
 
 def square_root(a):
     return a**0.5
+#return.math.sqrt(a)
 
 
 def square(a):
@@ -13,7 +14,7 @@ def square(a):
 
 
 def average(a, b, c) :
-    return a*b*c
+    return( a+b+c)/3
 
 
 def to_radians(angle_degs, angle_mins, angle_secs):
