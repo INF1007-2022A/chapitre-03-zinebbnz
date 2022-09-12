@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import math
 from math import pi
 
 
@@ -20,12 +20,12 @@ def average(a, b, c) :
 def to_radians(angle_degs, angle_mins, angle_secs):
 
    #transformer les deg en degrés décimal
-    degres_decimal = angle_degs + (angle_mins + angle_secs / 60) / 60
+    #degres_decimal = angle_degs + (angle_mins + (angle_secs / 60)) / 60
 
    #transformer les degres en radiant
-    rad=(degres_decimal * pi)/180
+    #rad=(degres_decimal * pi)/180
 
-    return rad
+    return math.radians(angle_degs + (angle_mins + (angle_secs / 60)) / 60)
 
 
 def to_degrees(angle_rads):
@@ -51,7 +51,7 @@ def main() -> None:
 
     print(f"Moyenne des nombres 2, 4, 6: {average(2, 4, 6)}")
 
-    print(f"Conversion de 100 degres, 2 minutes et 45 secondes en radians: {to_radians(180, 2, 45)}")
+    print(f"Conversion de 100 degres, 2 minutes et 45 secondes en radians: {to_radians(100, 2, 45)}")
     
     degrees, minutes, seconds = to_degrees(1.0)
     print(f"Conversion de 1 radian en degres: {degrees} degres, {minutes} minutes et {seconds} secondes")
